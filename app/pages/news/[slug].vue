@@ -1,6 +1,6 @@
 <template>
   <div class="page-news">
-    <NewsPopupLast :slug="slug"/>
+    <NewsPopup :slug="slug" />
   </div>
 
 </template>
@@ -8,17 +8,12 @@
 <script setup>
 
 const route = useRoute()
-const slug = route.params.slug 
-const { 
-  data: news, 
-  pending, 
-  error 
-} = useFetch(`https://bsk-admin-test.testers-site.ru/api/news/${slug}`)
+const slug = route.params.slug
 
 </script>
 
 
-<style  scoped>
+<style scoped>
 .page-news {
   padding-top: 114rem;
 }

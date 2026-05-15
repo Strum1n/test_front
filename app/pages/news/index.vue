@@ -1,8 +1,8 @@
 <template>
-<div>Hello News</div>
+    <div>Hello News</div>
 </template>
 <style scoped>
-div{
+div {
     font-size: 50em;
 }
 </style>
