@@ -1,9 +1,9 @@
 <template>
     <div class="tag-cat" :color="props.category_tag.color">
-        <div v-if="props.category_tag.src" class="tag-cat-icon">
-            <img class="tag-cat-icon" :src=props.category_tag.src></img>
+        <div v-if="props.category_tag.src" class="tag-cat__icon">
+            <img :src=props.category_tag.src></img>
         </div>
-        <span class="tag-cat-text">
+        <span>
             {{ props.category_tag.name }}
         </span>
     </div>
@@ -19,7 +19,7 @@ const props = defineProps<{
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .tag-cat {
     column-gap: 3rem;
     display: flex;
@@ -28,21 +28,26 @@ const props = defineProps<{
     padding: 4rem 12rem;
     font-size: 14rem;
     font-family: 'Onest';
-}
 
-.tag-cat-icon {
-    width: 18rem;
-    height: 18rem;
+    &[color="blue"] {
+        border-color: #5b4481;
+        color: #5b4481;
+    }
 
-}
+    &[color="red"] {
+        border-color: #ca2250;
+        color: #ca2250;
+    }
 
-.tag-cat[color="blue"] {
-    border-color: #5b4481;
-    color: #5b4481;
-}
+    &__icon {
+        width: 18rem;
+        height: 18rem;
 
-.tag-cat[color="red"] {
-    border-color: #ca2250;
-    color: #ca2250;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
 }
 </style>

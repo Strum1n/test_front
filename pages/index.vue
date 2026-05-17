@@ -3,6 +3,6 @@
 </template>
 <style scoped>
 div {
-    font-size: 50em;
+    font-size: 50rem;
 }
 </style>

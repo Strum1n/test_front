@@ -1,8 +1,8 @@
 <template>
     <div class="breadcrumbs">
-        <a class="breadcrumbs__item" href="/">ГЛАВНАЯ</a>
-        <a class="breadcrumbs__item" href="/news">НОВОСТИ</a>
-        <span class="breadcrumbs__item inactive">{{ props.title }}</span>
+        <NuxtLink class="breadcrumbs__item" to="/">ГЛАВНАЯ</NuxtLink>
+        <NuxtLink class="breadcrumbs__item" to="/news">НОВОСТИ</NuxtLink>
+        <span class="breadcrumbs__item breadcrumbs__item_inactive">{{ props.title }}</span>
     </div>
 </template>
 
@@ -13,28 +13,28 @@ const props = defineProps<{
 }>()
 
 </script>
-<style scoped>
+
+<style lang="scss" scoped>
 .breadcrumbs {
     display: flex;
     font-family: 'Onest';
     color: black;
-}
 
-.breadcrumbs__item {
-    font-size: 15.5rem;
-    color: inherit;
-    letter-spacing: .64rem;
-    font-weight: 500;
-    text-transform: uppercase;
+    &__item {
+        font-size: 15.5rem;
+        color: inherit;
+        letter-spacing: .64rem;
+        font-weight: 500;
+        text-transform: uppercase;
 
-}
+        &:not(:last-child)::after {
+            content: "•";
+            padding: 0 8rem;
+        }
 
-.breadcrumbs__item:not(:last-child)::after {
-    content: "•";
-    padding: 0 8rem;
-}
-
-.breadcrumbs__item:last-child {
-    opacity: 0.4;
+        &_inactive {
+            opacity: .4;
+        }
+    }
 }
 </style>
