@@ -94,11 +94,6 @@ if (error.value?.statusCode === 404) {
 }
 </style>
 <style>
-html {
-  font-size: .0625vw;
-  margin: 0;
-}
-
 h1 {
   font-size: 48rem;
 }
